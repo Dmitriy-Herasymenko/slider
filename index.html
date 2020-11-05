@@ -9,13 +9,22 @@
 </head>
 <body>
     <div class="container">
+        <div class="background">
+            <img src="./img/city1.jpg" alt="" class="bg show">
+            <img src="./img/city2.jpg" alt="" class="bg">
+            <img src="./img/city2.jpg" alt="" class="bg">
+            <img src="./img/city2.jpg" alt="" class="bg">
+            <img src="./img/city3.jpg" alt="" class="bg">
+        </div>
         <div class="slider-container">
             <div>
                 <div>
                     <div class="slider">
-                        <div class="img"><img src="./img/city1.jpg"alt=""></div>
+                        <div class="img" id="last"><img src="./img/city1.jpg"alt=""></div>
                         <div class="img"><img src="./img/city2.jpg" alt=""></div>
-                        <div class="img"><img src="./img/city3.jpg" alt=""></div>
+                        <div class="img"><img src="./img/city2.jpg" alt=""></div>
+                        <div class="img"><img src="./img/city2.jpg" alt=""></div>
+                        <div class="img" id="first"><img src="./img/city3.jpg" alt=""></div>
                     </div>
                 
                 </div>
@@ -28,9 +37,11 @@
         <button class="btn" id="next"><i class="fas fa-chevron-right"></i></button>
 
         <ul>
-            <li class="option colored"></li>
-            <li class="option"></li>
-            <li class="option"></li>
+            <li class="option colored" option-index='0'></li>
+            <li class="option" option-index='1'></li>
+            <li class="option" option-index='2'></li>
+            <li class="option" option-index='3'></li>
+            <li class="option" option-index='4'></li>
         </ul>
     </div>
     
