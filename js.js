@@ -4,7 +4,7 @@ const options = document.querySelectorAll('.option');
 const slides = document.querySelectorAll('.img');
 const bakcgrounds = document.querySelectorAll('.bg');
 
-let index = 1;
+let index = 0;
 let optionIndex = 0;
 let size = slides[index].clientWidth;
 
@@ -25,45 +25,24 @@ function update () {
 
 function btnCheck () {
     if(this.id === 'prev') {
-        index--;
-
-        if(optionIndex === 0) {
-            optionIndex = 4;
-        }
-        else {
-            optionIndex --;
-        }
+        index === 0 ? index = 4 : index--;
+        optionIndex === 0 ? optionIndex = 4 : optionIndex--;
     }
 
     else if (this.id === 'next') {
-        index++;
-
-        if (optionIndex === 4) {
-            optionIndex = 0;
-        } else {
-            optionIndex++;
-        }
+        index === 4 ? index = 0 : index++;
+        optionIndex === 4 ? optionIndex = 0 : optionIndex++;
     }
     slide();
 }
 
 function optionFunc() {
     let i = Number(this.getAttribute('option-index'));
-    index = i + 1;
+    index = i;
     optionIndex = i;
     slide();
 }
-slider.addEventListener('transitionend', () => {
-    if(slides[index].id === 'last') {
-        slider.style.transition = 'none';
-        index.slides.length - 2;
-        slider.style.transform = 'translateX(' + (-size * index) + 'px';
-    }
-    else if (slides[index].id === 'first') {
-        slider.style.transition = 'none';
-        index = 1;
-        slider.style.transform = 'translateX(' + (-size * index) + 'px';
-    }
-})
-buttons.forEach(btn => btn.addEventListener('click', btnCheck));
+
+
 options.forEach(option => option.addEventListener('click', optionFunc));
+buttons.forEach(btn => btn.addEventListener('click', btnCheck));
